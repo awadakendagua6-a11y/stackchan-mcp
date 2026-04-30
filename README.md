@@ -114,9 +114,20 @@ PNG → RGB565 配列の変換スクリプトは LVGL 公式の [Online Image Co
 
 ## ライセンス
 
-MIT License。`LICENSE` 参照。
+このリポジトリはデュアルライセンス構成です。
 
-`firmware/` は [78/xiaozhi-esp32](https://github.com/78/xiaozhi-esp32) (MIT) のフォークを git subtree で取り込んでいる。
+| 範囲 | ライセンス |
+|---|---|
+| 全体 (`gateway/`, トップレベル, `firmware/` の大部分) | **MIT License** (`LICENSE` 参照) |
+| `firmware/main/boards/stackchan/` 内の **SCServo_lib 由来ファイル** (SCS.{cc,h}, SCSCL.{cc,h}, SCSerial.{cc,h}, INST.h, SCServo.h) | **GNU GPL-3.0** (`firmware/main/boards/stackchan/SCServo_lib_LICENSE.txt` 参照) |
+
+これは Feetech の SCServo SDK が GPL-3.0 で配布されているための制約です。SCServo_lib を静的リンクする **firmware バイナリ全体は実質 GPL-3.0** として配布されることになります。
+
+一方、`gateway/` は独立した Python プロセスで、ESP32 とはネットワーク経由 (WebSocket) でしか通信しないため、**MIT License** のまま利用・派生できます。
+
+### upstream
+
+`firmware/` は [78/xiaozhi-esp32](https://github.com/78/xiaozhi-esp32) (MIT) のフォーク ([shomochisaku/xiaozhi-esp32](https://github.com/shomochisaku/xiaozhi-esp32)) を git subtree で取り込んでいます。SCServo_lib は公式 [stack-chan](https://github.com/mongonta0716/stack-chan) (タカヲさん) から移植したファームウェアコンポーネントです。
 
 ## 関連プロジェクト
 

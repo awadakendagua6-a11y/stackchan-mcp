@@ -4,6 +4,22 @@ Copyright (c) 2025 Shenzhen Xinzhi Future Technology Co., Ltd.
 Copyright (c) 2025 Project Contributors
 Copyright (c) 2026 shomochisaku
 
+NOTE: This MIT License covers the repository as a whole **except** for the
+SCServo_lib files (Feetech serial bus servo SDK), which live in
+`firmware/main/boards/stackchan/` (files: SCS.{cc,h}, SCSCL.{cc,h},
+SCSerial.{cc,h}, INST.h, SCServo.h) and are licensed separately under the
+GNU General Public License v3.0. Their full license text is in
+`firmware/main/boards/stackchan/SCServo_lib_LICENSE.txt`.
+
+Because the firmware binary statically links the SCServo_lib code, the
+combined firmware build is effectively distributed under GPL-3.0. The
+gateway/ Python package, which runs in a separate process and communicates
+with the device only over a network socket, remains under the MIT License
+above.
+
+---
+
+
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
