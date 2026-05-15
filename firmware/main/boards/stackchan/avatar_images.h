@@ -1,4 +1,4 @@
-// Auto-generated header. See avatar_images.cc.
+// Auto-generated header. See avatar_images.local.cc.
 #pragma once
 
 #include <lvgl.h>
